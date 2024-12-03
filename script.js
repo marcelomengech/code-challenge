@@ -47,4 +47,16 @@ function carSpeed(speed){
             console.log(`Points: ${demeritPoints}`);
         }
     }
+
+}
+
+// Third Challenge
+function netSalaryCalculator(){
+    const basicSalary = parseFloat(prompt("Enter your basic salary:"));
+    const benefits = parseFloat(prompt("Enter your benefits:"));
+    if (isNaN(basicSalary) || isNaN(benefits)) {
+        console.log("Invalid input. Please enter numeric values.");
+        return;
+        
+    }
 }
