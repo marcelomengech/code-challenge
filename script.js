@@ -57,6 +57,21 @@ function netSalaryCalculator(){
     if (isNaN(basicSalary) || isNaN(benefits)) {
         console.log("Invalid input. Please enter numeric values.");
         return;
-        
+
+        const grossSalary = basicSalary + benefits;
+
+        let tax = 0;
+        if (grossSalary <=24000){
+            tax = grossSalary + 0.1;
+
+        }else if (grossSalary <=32333){
+            tax = grossSalary + 0.25;
+
+        }else {
+            tax = grossSalary + 0.3;
+
+    }
+
+
     }
 }
