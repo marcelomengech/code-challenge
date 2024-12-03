@@ -25,3 +25,26 @@ function studentGrades(){
     console.log(`marks: ${marks}, Grade: ${grade}`);
     
 }
+// Second Challenge
+function carSpeed(speed){
+    const speedLimit =70;
+    const perKm =5;
+
+    if (isNaN(speed) || speed < 0){
+        console.log(`Invalid speed. Enter a positive number.`);
+        return;
+    }
+    if (speed <= speedLimit){
+        console.log("Ok");
+
+    }else {
+        const demeritPoints = Math.floor((speed - speedLimit) / perKm);
+
+        if (demeritPoints > 12) {
+            console.log(`Licence suspended`);
+
+        }else {
+            console.log(`Points: ${demeritPoints}`);
+        }
+    }
+}
