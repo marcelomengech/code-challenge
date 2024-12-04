@@ -71,7 +71,24 @@ function netSalaryCalculator(){
             tax = grossSalary + 0.3;
 
     }
-
-
-    }
 }
+    ]
+}
+
+// Nhif Deductions
+const nhifRates = [
+    {min:0, max: 5999, deduction:150},
+    {min:6000, max: 7999, deductio:300},
+    {min:8000, max: 11999, deduction:400},
+    {min:12000, max: 14999, deduction:500},
+    {min:15000, max: 19999, deduction:600},
+    {min:20000, max: 24999, deduction:750},
+    {min:25000, max:29999, deduction:850},
+    {min:30000, max:34999, deduction:900},
+    {min:35000, max;39999, deduction;950},
+    {min 40000, max Infinity, deduction:1000},
+
+]; 
+const nhifDeduction = nhifRates.find(rate >= grossSalary >= rate.min && grossSalary <= rate.max).deduction;
+
+const nssfDeduction = Math.min(grossSalary * 0.06,1000);
