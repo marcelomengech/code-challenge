@@ -2,11 +2,15 @@
 function studentGrades(){
     const input = prompt(`enter student marks(0-100):`)
     const marks = Number(input);
+    
+    // Validate Marks
 
     if (isNaN(marks) || marks < 0 || marks > 100) {
         console.log(`Invalid input. Enter a number between 0 and 100`);
         return;
     }
+    //Determine the Grades
+
     let grade;
     if(marks >=79){
         grade = `A`;
@@ -22,6 +26,8 @@ function studentGrades(){
     }else {
         grade = `E`
     }
+
+    //Output
     console.log(`marks: ${marks}, Grade: ${grade}`);
     
 }
@@ -30,10 +36,15 @@ function carSpeed(speed){
     const speedLimit =70;
     const perKm =5;
 
+    //Validate Input
+
     if (isNaN(speed) || speed < 0){
         console.log(`Invalid speed. Enter a positive number.`);
         return;
     }
+    
+    // Check speed and Calculate Demerit Points
+
     if (speed <= speedLimit){
         console.log("Ok");
 
@@ -54,11 +65,17 @@ function carSpeed(speed){
 function netSalaryCalculator(){
     const basicSalary = parseFloat(prompt("Enter your basic salary:"));
     const benefits = parseFloat(prompt("Enter your benefits:"));
+
+    // Validate Input
     if (isNaN(basicSalary) || isNaN(benefits)) {
         console.log("Invalid input. Please enter numeric values.");
         return;
 
+        // Calculate Gross Salary
+
         const grossSalary = basicSalary + benefits;
+
+        //Calculate (PAYE) tax
 
         let tax = 0;
         if (grossSalary <=24000){
@@ -75,7 +92,7 @@ function netSalaryCalculator(){
     ]
 }
 
-// Nhif Deductions
+// Calculate Nhif Deductions
 const nhifRates = [
     {min:0, max: 5999, deduction:150},
     {min:6000, max: 7999, deductio:300},
@@ -90,5 +107,7 @@ const nhifRates = [
 
 ]; 
 const nhifDeduction = nhifRates.find(rate >= grossSalary >= rate.min && grossSalary <= rate.max).deduction;
+
+// Calculate Nssf Deductions
 
 const nssfDeduction = Math.min(grossSalary * 0.06,1000);
